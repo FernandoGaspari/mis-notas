@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://kit.fontawesome.com/5ff2453c72.js" crossorigin="anonymous"></script>
+    
+    <link rel = "shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon"> 
+    <link rel ="icon" href="/assets/favicons/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <title>Notas CSS</title>
+</head>
+<body>
+    <header class="header">
+        <a href="/index.html">Volver</a>
+    </header>
+    <main>
+        <h1>Notas CSS</h1>
+
+        <div class="indice">
+            <nav>
+            <ol>
+                <li class="lista"><a href="#selectores">Selectores.</a></li>
+                <li class="lista"><a href="#principios-css">Principios básicos de CSS.</a></li>
+                <li class="lista"><a href="#box-model">Box Model.</a></li>
+                <li class="lista"><a href="#mas-propiedades">Más propiedades.</a>
+                <ul>
+                    <li><a href="#overflow">Overflow.</a></li>
+                    <li><a href="#display">Display.</a></li>
+                    <li><a href="#outline">Outline.</a></li>
+                    <li><a href="#text-align">Text Align.</a></li>
+                    <li><a href="#box-shadow">Box Shadow.</a></li>
+                </ul>
+                </li>
+                <li class="lista"><a href="#position">Position.</a></li>
+                <li class="lista"><a href="#formularios">Formularios.</a></li>
+                <li class="lista"><a href="#contenido-embebido">Contenido embebido.</a></li>
+                <li class="lista"><a href="#accesibilidad">Atributos de accesibilidad.</a></li>
+                
+            </ol>
+        </nav>
+    </div>
+    <section id="selectores"> <h1 class="seccion"> Sección 1</h1>
+    <article> <h2>Selectores</h2>
+        <h3>Selectores elementales</h3>
+        <ul>
+            <li>Selector universal: *{}= Afecta a todo.</li>
+            <li>Selector de tipo o etiqueta: etiqueta{}= Afecta a todas las etiquetas iguales que hayamos elegido.</li>
+        </ul>
+        <h3>Selectores de atributo</h3>
+        <ul>
+            <li>Selector de id: #id{}= Ponemos el id del elemento.</li>
+            <li>Selector de clase: .clase{}= Ponemos la clase del elemento.</li>
+            <li>Otros selectores de atributo:
+                <ul>
+                    <li>[atributo]= También podemos poner [atributo=valor]. ([href="https://google.com"])</li>
+                    <li>[atributo^=valor]= Da estilo al atributo que empiece con "valor".</li>
+                    <li>[atributo*=valor]= Da estilo al atributo que contenga "valor" esté donde esté.</li>
+                    <li>[atributo$=valor]= Da estilo al atributo que termine con "valor".</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Selectores agrupados</h3>
+        <ul>
+            <li>.text, .text-1, .text-3= Para dar el mismo estilo a, por ejemplo, varias clases diferentes (o atributos, o etiquetas, etc), los separamos con , (coma).</li>
+        </ul>
+        <h3>Selectores combinadores</h3>
+        <ul>
+            <li>Selector descendente (selector hijos)= Para elegir un elemento que esté dentro de otro. Se separan con espacio. (por ejemplo div .title-2)</li>
+            <li>Selector de hermano siguiente= Se usa el selector +, el estilo solo se da al hermano que esté inmediatamente después. (ej: .text + h2{} el estilo se da a h2)</li>
+            <li>Selector de hermanos siguientes= Se usa el selector ~.</li>
+            <li>Selector de hijo directo= Se usa el selector >.</li>
+        </ul>
+</article>
+</section>
+<section id=principios-css> <h1 class="seccion">Sección 2</h1>
+    <article> <h2>Principios básicos de CSS</h2>
+        <h3>Especificidad</h3>
+        <ul>
+            <li>Etiquetas y pseudoelementos= 0,0,1.</li>
+            <li>Clases, atributos y pseudoclases= 0,1,0.</li>
+            <li>Ids= 1,0,0.</li>
+            <li>Estilos en línea= 1,0,0,0</li>
+        </ul>
+        <p>1,1,1 es mas específico que 0,1,0.</p>
+    </article>
+        <article> <h3>Cascada</h3>
+        <p>Funciona siempre que la especificidad sobre el elemento sea la misma.</p>
+        </article>
+        <article> <h3>Herencia en CSS</h3>
+            <p>Es la capacidad que tienen algunos elementos de heredar algunas propiedades de sus elementos contenedores, (padres, abuelos, etc)</p>
+                <ul>
+                    <li>inherit= Para forzar la herencia de un elemento que por defecto no herede.</li>
+                    <li>initial= Para que el elemento no herede y vuelva a su estilo pord efecto.</li>
+                </ul>
+        </article>
+    </section>
+<section id=box-model> <h1 class="seccion">Sección 3</h1>
+    <h2>Box Model</h2>
+    <img class="imagen" src="/assets/images/box-model.png" alt="box model">
+    <article> <h3>Width y Height</h3>
+         <ul>
+             <li>Elemento de bloque= Dan ancho (width) y alto (height) a la caja.</li>
+             <li>Elemento de línea= Solo da ancho, height no funciona.</li>
+         </ul>
+    </article>
+    <article> <h3>Margin</h3>
+        <p>Es la propiedad que nos permite generar espacio entre elementos.</p>
+        <p>Controla los 4 lados posibles a los que dar márgenes:</p>
+        <ul>
+            <li>margin-top= Margen superior.</li>
+            <li>margin-right= Margen derecho.</li>
+            <li>margin-bottom= Margen inferior.</li>
+            <li>margin-left= Margen izquierdo.</li>
+        </ul>
+        <p>Admite hasta 4 valores que van en el orden de las agujas del reloj:</p>
+        <ul>
+            <li>4 valores= margin: top right bottom left;</li>
+            <li>3 valores= margin: top left/right bottom;</li>
+            <li>2 valores= margin: top/bottom left/right;</li>
+            <li>1 valores= margin: top/right/bottom/left;</li>
+        </ul>
+        <p>Con margin-"x": auto; pedimos al navegador que calcule automaticamente el margen hacia el eje ("x") que elijamos, el elemento tiene que tener width y eight declarados.</p>
+        <p>margin-left: auto y margin-right: auto centran la caja.</p>
+    </article>
+    <article> <h3>Padding</h3>
+        <p>Es la propiedad que nos permite generar espacio interno entre el borde y la caja.</p>
+        <p>Controla los 4 lados posibles a los que dar padding:</p>
+        <ul>
+            <li>padding-top= padding superior.</li>
+            <li>padding-right= padding derecho.</li>
+            <li>padding-bottom= padding inferior.</li>
+            <li>padding-left= padding izquierdo.</li>
+        </ul>
+        <p>Admite hasta 4 valores que van en el orden de las agujas del reloj:</p>
+        <ul>
+            <li>4 valores= padding: top right bottom left;</li>
+            <li>3 valores= padding: top left/right bottom;</li>
+            <li>2 valores= padding: top/bottom left/right;</li>
+            <li>1 valores= padding: top/right/bottom/left;</li>
+        </ul>
+    </article>
+    <article> <h3>Border</h3>
+        <p>Es una propiedad que nos permite modificar el borde de la caja. Agrupa 3 propiedades:</p>
+        <ul>
+            <li>border-width= Ancho del borde.
+                <ul>
+                    <li>border-top-width</li>
+                    <li>border-right-widht</li>
+                    <li>border-bottom-widht</li>
+                    <li>border-left-widht</li>
+                </ul>
+            </li>
+            <li>border-style= Estilo del borde.
+                <ul>
+                    <li>border-top-style</li>
+                    <li>border-right-style</li>
+                    <li>border-bottom-style</li>
+                    <li>border-left-style</li>
+                </ul>
+            </li>
+            <li>border-color= Color del borde.
+                <ul>
+                    <li>border-top-color</li>
+                    <li>border-right-color</li>
+                    <li>border-bottom-color</li>
+                    <li>border-left-color</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Border radius</h4>
+        <p>Es la propiedad que nos permite redondear vertices de forma independiente. Engloba 4 propiedades:</p>
+        <ul>
+            <li>border-top-left-radius= Radio del borde superior izquierdo.</li>
+            <li>border-top-right-radius= Borde del radio superior derecho.</li>
+            <li>border-bottom-right-radius= Borde del radio inferior derecho.</li>
+            <li>border-bottom-left-radius= Borde del radio inferior izquierdo.</li>
+        </ul>
+        <p>Si recibe 1 valor dibujará un círculo en el vértice que especifiquemos. (border-radius: 50px 100px;)</p>
+        <p>Si recibe 2 valores dibujará una elipse en el vértice que especifiquemos. (border-radius: 50px / 100px;)</p>
+        <img class="imagen" src="/assets/images/border-radius.png" alt="border radius eliptico">
+    </article>
+    <article> <h3>Box Sizing</h3>
+            <p>Es la propiedad que nos permite controlar el cálculo que hace el navegador a la hora de modificar las propiedades content, padding y border.</p>
+            <p>Podemos darle dos valores:</p>
+            <ul>
+                <li>content-box= Valor por defecto.</li>
+                <li>border-box= Calcula el tamaño del elemento incluyendo el padding y el border.</li>
+            </ul>
+    </article>
+</section>
+<section id=mas-propiedades> <h1 class="seccion">Sección 4</h1>
+    <h2>Más propiedades</h2>
+<article> <h3 id="overflow">Overflow</h3>
+<p>Es la propiedad que controla qué debe hacer la caja cuando su contenido se desborda del contenedor.</p>
+<p>Decimos que un contenido se desborda cuando la caja es más pequeña que el contenemor.</p>
+<p>Engloba overflow-x y overflow-y.</p>
+<p>Tiene 4 posibles valores:</p>
+<ul>
+    <li>visible= Es el valor por defecto.</li>
+    <li>hidden= El contenido que se desborde no se verá. Si aplicamos esta propiedad en un solo eje, el otro se pondrá automaticamente en el valor scroll.</li>
+    <li>scroll= Aparecerán barras de scroll en el eje asignado. (x, y o ambos)</li>
+    <li>auto= Aparecerás barras de scroll en el caso de que hiciera falta.</li>
+</ul>
+</article>
+<article> <h3 id="display">Display</h3>
+    <p>La propiedad display nos sirve para cambiar el contexto de los elementos dentro del navegador.</p>
+    <p>Admite varios valores:</p>
+    <ul>
+        <li>none= Hace que el elemento no se muestre, pero sigue cargándose.</li>
+        <li>block= Hace que el elemento sea de bloque.</li>
+        <li>inline= Hace que el elemento sea de línea.</li>
+        <li>inline-block= Hace que el elemento sea de línea pero admite medidas y márgenes verticales.</li>
+    </ul>
+</article>
+<article><h3 id="outline">Outline</h3>
+    <p>Es la propiedad que nos permite dibujar un borde por fuera del modelo de caja.</p>
+    <ul>
+        <li>outline-wigth= Controla el ancho del outline.</li>
+        <li>outline-style= Controla el estilo del outline.</li>
+        <li>outline-color= Controla el color del outline.</li>
+    </ul>
+    <p>Tiene las mismas propiedades y sintaxis que border, pero con algunas diferencias:</p>
+    <ul>
+        <li>No ocupa sitio, ya que no forma parte del box-model.</li>
+        <li>No se puede redondear.</li>
+        <li>No se pueden controlar los lados de forma independiente.</li>
+    </ul>
+    <p>También cuenta con la propiedad outline-offset, que nos permite aumentar o disminuir la distancia del outline en relación a la caja que pertenece.</p>
+</article>
+<article> <h3 id="text-align">Text Align</h3>
+    <p>Es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de bloque siempre que el contenido no tenga ancho declarado.</p>
+    <p>Acepta 4 posibles valores:</p>
+    <ul>
+        <li>text-align:left;= Alinea el contenido a la izquierda.</li>
+        <li>text-align:right;= Alinea el contenido a la derecha.</li>
+        <li>text-align:center;= Alinea el contenido al centro.</li>
+        <li>text-align:justify;= Alinea el contenido de forma justificada. (no es recomendable usarlo)</li>
+    </ul>
+</article>
+<article> <h3 id="box-shadow">Box Shadow</h3>
+    <p>Es la propiedad que nos permite añadir efectos de sombra a nuestra caja.</p>
+    <p>En escencia lo que hace es crear un clon de la caja respetando la forma de su box-model.</p>
+    <p>La sintaxis de box-shadow se puede escribir de distintas formas según lo que queramos conseguir.</p>
+    <p>Los valores que le podemos poner son:</p>
+    <ul>
+        <li>offset-x= Desplazamiento en x, es obligatorio.</li>
+        <li>offset-y= Desplazamiento en y, es obligatorio.</li>
+        <li>blur-radius= Desenfoque de la sombra.</li>
+        <li>spread-radius= Expansión de la sombra.</li>
+        <li>color= Color de la sombra, si no lo especificamos lo heredará del elemento al que pertenece.</li>
+        <li>inset= Determina si la sombra será interior o exterior.</li>
+    </ul>
+    <p>Podemos poner varias sombras si separamos los valores de cada sombra con , (coma).</p>
+</article>
+</section>
+<section id=position> <h1 class="seccion">Sección 5</h1>
+    <h2>Position</h2>
+        <p>La propiedad position nos permite posicionar los elementos.</p>
+        <p>Conceptos:</p>
+        <ul>
+            <li>Flujo de renderizado= Por norma general los elementos se dibujan de izquierda a derecha y de arriba hacia abajo. El punto 0,0 de los elementos es la esquina superior izquierda.</li>
+            <li>Espacio reservado= Es el espacio que tiene un elemento asignado en el navegador.</li>
+            <li>Elemento posicionado= Esto significa que el elemento tiene la propiedad "position" con un valor distinto de "static", que es el valor por defecto.</li>
+            <li>Stackin context= Contexto de apilamiento. Es el orden en el que se apilarán las cajas que se superponen dentro del mismo contenedor.</li>
+        </ul>
+        <p>Al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los elementos en los 3 ejes.</p>
+        <ul>
+            <li>top= El elemento se moverá desde la parte superior la distancia que le hayamos indicado.</li>
+            <li>right= El elemento se moverá desde la parte derecha la distancia que le hayamos indicado.</li>
+            <li>bottom= El elemento se moverá desde la parte inferior la distancia que le hayamos indicado.</li>
+            <li>left= El elemento se moverá desde la parte izquierda la distancia que le hayamos indicado.</li>
+            <li>z-index= Nos permite mover el elemento en el contexto de apilamiento, es decir, en el eje z.</li>
+        </ul>
+        <p>Si a un elemento le declaramos la propiedad top y/o left, las propiedades bottom y/o left no funcionarán.</p>
+     <article><h3>Position Relative</h3>
+        <p>El elemento mantendrá su posición y medidas en el flujo de renderizado y mantendrá su espacio reservado. Si lo movemos lo hará usando su posición en el html como punto de referencia.</p>
+     </article>
+     <article><h3>Position Absolute</h3>
+        <p>El elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el elemento posicionado contenedor como referencia. Si no tiene ninguno, usará el elemento html de referencia.</p>
+     </article>
+     <article><h3>Position Fixed</h3>
+        <p>El elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el elemento html de referencia, y además se quedará fijo en esa posición aunque hagamos scroll.</p>
+
+     </article>
+</section>
+<section> <h1 class="seccion">Sección 6</h1>
+    <article> <h2 id=tablas>Tablas</h2>
+        <h3>Etiquetas de las tablas</h3>
+        <dl class="dl">
+            <dt>&lt;table&gt;</dt>
+            <dd>Inicio de toda tabla.</dd>
+            <dt>&lt;tr&gt;</dt>
+            <dd>Construye una fila.</dd>
+            <dt>&lt;td&gt;</dt>
+            <dd>Construye una celda. (cantidad de esta etiqueta=cantidad de columnas</dd>
+        </dl>
+        <ul>
+            <li>Título de la tabla: Debajo de &lt;table&gt; se usa &lt;caption&gt;.</li>
+            <li>Cabecera de la tabla: Debajo de &lt;caption&gt; se usa &lt;thead&gt; y debajo de &lt;thead&gt; se pone &lt;th&gt;.</li>
+            <li>Pie de la tabla: &lt;tfoot&gt;.</li>
+        </ul>
+        <p>El cuerpo de la página se encierra en &lt;tbody&gt;.</p>
+    </article>
+    <article> <h3>Atributos de las tablas</h3>
+        <dl class="dl">
+            <dt>colspan</dt>
+            <dd>Sirve para fusionar columnas.</dd>
+            <dt>rowspan</dt>
+            <dd>Sirve para fusionar filas.</dd>
+        </dl>
+        <p>Sintáxis: &lt;td atributo="nº de celdas"&gt; Nombre &lt;/td&gt;</p>
+    </article>
+    <article> <h3>Agrupar columnas</h3>
+        <p>Se usa la etiqueta &lt;colgroup&gt;, dentro de ésta tantas &lt;col&gt; como columnas querramos agrupar. Para agrupar mas de una columna en una sola etiqueta se usa el atributo span en el que el valor es el número de columnas a agrupar. (el primer &lt;col&gt; es la primera columna de la tabla)</p>
+    </article>
+    <!-- <article> <h4>Tabla de práctica</h4>
+        <div class="tabla">  
+            <table>
+            <caption>HORARIOS</caption>
+            <thead>
+                <tr>
+                    <th>xxxxxxxxxx</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>8:00 a 9:00</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <td>9:00 a 10:00</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <td>10:00 a 11:00</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+            </tr>
+            <tr>
+                <td>11:00 a 12:00</td>
+                <td colspan="5">RECREO</td>
+            </tr>
+            <tr>
+                <td>12:00 a 13:00</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+                <td>Lorem</td>
+            </tr>
+        </tbody>
+        </table>
+    </div> -->
+    </article>
+</section>
+<section> <h1 class="seccion">Sección 7</h1>
+    <article> <h2 id=formularios>Formularios</h2>
+        <h3>Etiquetas de formularios</h3>
+        <dl class="dl">
+            <dt>&lt;form&gt;</dt>
+            <dd>Engloba nuestro formulario.</dd>
+            <dt>&lt;label&gt;</dt>
+            <dd>Donde escribimos el nombre del campo a rellenar.</dd>
+            <dt>&lt;input&gt;</dt>
+            <dd>Crea un campo para que el usuario interactúe.</dd>
+            <dt>&lt;button&gt;</dt>
+            <dd>Crea un botón que envía el formulario.</dd>
+        </dl>
+        <p>Con el atributo for de &lt;label&gt; podemos asociarlo con su respectivo &lt;input&gt;, solo tenemos que ponerle un id a &lt;input&gt; y ese id en for de &lt;label&gt;.</p>
+    </article>
+    <article> <h4>Tipos de &lt;input&gt;</h4>
+        <dl class="dl">
+            <dt>button</dt>
+            <dd>El nombre del botón se establece con el atributo value. En aspecto es igual &lt;button&gt; pero no sirve para enviar formularios. (mayormente se usa en JavaScript) <input type="button" value="boton"></dd>
+            <dt>submit</dt>
+            <dd>Para enviar formularios. (el nombre se establece igual que en button) <input type="submit" value="submit"></dd>
+            <dt>date</dt>
+            <dd>Campo para ingresar día, mes y año.<input type="date" name="fecha" id="date"></dd>
+            <dt>time</dt>
+            <dd>Campo para ingresar hora. <input type="time" name="hora" id="hour"></dd>
+            <dt>mounth</dt>
+            <dd>Campo para ingresar mes. <input type="mounth" name="mes" id="mounth-1"></dd>
+            <dt>week</dt>
+            <dd>Campo para ingresar semana. <input type="week" name="semana" id="week"></dd>
+            <dt>search</dt>
+            <dd>Barra de búsqueda. <input type="search" name="busqueda" id="search"></dd>
+            <dt>tel</dt>
+            <dd>Campo para ingresar teléfono. <input type="tel" name="telefono" id="tel"></dd>
+            <dt>email</dt>
+            <dd>Campo para ingresar email. <input type="email" name="correo" id="mail"></dd>
+            <dt>password</dt>
+            <dd>Campo para ingresar contraseñas. <input type="password" name="contraseña" id="password"></dd>
+            <dt>url</dt>
+            <dd>Campo para ingresar urls, <input type="url" name="pagina" id="urls"></dd>
+            <dt>color</dt>
+            <dd>Para especificar un color. <input type="color" name="colores" id="color"></dd>
+            <dt>number</dt>
+            <dd>Solo se pueden ingresar números. <input type="number" name="numeros" id="numbers"></dd>
+            <dt>range</dt>
+            <dd><ul>
+                <li>step: Define de cuánto en cuánto se mueve.</li>
+                <li>min: Valor mínimo de la barra.</li>
+                <li>max: Valor máximo de la barra.</li>
+            </ul>
+            <input type="range" step="10" min="0" max="100" name="progreso" id="progress"></dd>
+            <dt>reset</dt>
+            <dd>Resetea el formulario. <input type="reset" name="reseteo" id="reset"></dd>
+        </dl>
+    </article>
+    <article> <h3>&lt;input&gt; tipo seleccionables</h3>
+        <dl class="dl">
+            <dt>radio</dt>
+            <dd>Permite seleccionar una única opción de una lista. <input type="radio" name="radio" id="radio"></dd>
+            <dt>checkbox</dt>
+            <dd>Permite seleccionar varias opciones de una lista. <input type="checkbox" name="checkbox" id="checkbox"></dd>
+        </dl>
+        <ul>
+            <li>Todos los &lt;input&gt; deben tener el mismo name para que solo se pueda seleccionar una opción.</li>
+            <li>El atributo checked sirve para que aparezca marcada alguna opción por defecto.</li>
+            <li>Es necesario agregar el atributo value a todos los &lt;input&gt; con la información que queremos que nos llegue a nosotros.</li>
+        </ul>
+    </article>
+    <article> <h3>Elemento select básico</h3>
+        <p>Crea una lista donde podemos seleccionar una o varias opciones. Su sintáxis es:</p>
+        <p>&lt;select name="lenguajes" id=""><br>
+            &lt;option value="html">HTML&lt;/option>  <br>
+            &lt;option value="css">CSS&lt;/option>
+                    &lt;/select></p>
+        <label for="lenguajes">Lenguaje</label>
+        <select name="lenguajes" id="lenguajes">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+        </select>
+    </article>
+    <article> <h3>Elemento select avanzado</h3>
+        <p>Para ordenar por categorías si es que tenemos muchas opciones; se usa la etiqueta &lt;optgroup&gt; con el atributo label para nombrar la categoría.</p>
+        <label for="animales">Animales</label>
+        <select name="animales" id="animales">
+            <optgroup label="Cuadrúpedos">
+                <option value="Cuadrúpedos">Perro</option>
+                <option value="Cuadrúpedos">Gato</option>
+            </optgroup>
+            <optgroup label="Aves">
+                <option value="Aves">Loro</option>
+                <option value="Aves">Canario</option>
+            </optgroup>
+            <optgroup label="Marinos">
+                <option value="Marinos">Peces</option>
+                <option value="Marinos">Caracoles</option>
+            </optgroup>
+        </select>
+    </article>
+    <article> <h3>Datalist</h3>
+        <p>Similar a select, incluye un filtro para facilitar la búsqueda, para esto ponemos el atributo list en un &lt;input&gt; de tipo list. &lt;datalist&gt; necesita un id y encierra todas las &lt;option&gt;del formulario.</p>
+        <label for="juegos">Juegos</label>
+        <input type="list" list="data-juegos" name="juegos" id="juegos">
+        <datalist id="data-juegos">
+            <select name="juegos" id="games">
+                <optgroup label="Indie">
+                    <option value="Indie">Ori</option>
+                    <option value="Indie">Minecraft</option>
+                </optgroup>
+                <optgroup label="AAA">
+                    <option value="AAA">Dragon Age</option>
+                    <option value="AAA">Mass Effect</option>
+                </optgroup>
+                <optgroup label="MMORPG">
+                    <option value="MMORPG">Wakfu</option>
+                    <option value="MMORPG">Dofus</option>
+                </optgroup>
+            </select>
+        </datalist>
+    </article>
+    <article> <h3>Más elementos para los formularios</h3>
+        <dl class="dl">
+            <dt>&lt;fieldset&gt;</dt>
+            <dd>Crea un recuadro que agrupa los elementos de un formulario.</dd>
+            <dt>&lt;legend&gt;</dt>
+            <dd>Le da un nombre al contenido de &lt;fieldset&gt;</dd>
+            <dt>&lt;input type="file"&gt;</dt>
+            <dd>Se usa para cargar archivos para luego enviarlos. (se usa JavaScript)</dd>
+            <dt>&lt;meter&gt;</dt>
+            <dd>Es como una barra de capacidad. Requiere atributos id, min, max, value, low, high y optimus.</dd>
+            <dt>&lt;progress&gt;</dt>
+            <dd>Representa el progreso de una tarea, usa atributos id, max y value.</dd>
+            <dt>&lt;textarea&gt;</dt>
+            <dd>Se utiliza para introducir texto en un formulario, usa atributos name, id, cols y rows; estos dos últimos cambian el tamaño de la caja. (es una caja de comentarios)</dd>
+        </dl>
+    </article>
+    <article> <h3>Atributos para formularios</h3>
+        <dl class="dl">
+            <dt>placeholder</dt>
+            <dd>Da una pista de lo que el usuario tiene que poner en la zona de input. ej: <input type="text" placeholder="Introzca nombre"></dd>
+            <dt>required</dt>
+            <dd>Hace que un campo sea obligatorio. (se puede desactivar desde la consola, se necesitará más seguridad)</dd>
+            <dt>readonly</dt>
+            <dd>Convierte el campo en solo lectura. ej: <input type="text" readonly></dd>
+            <dt>disabled</dt>
+            <dd>Desactiva el campo.</dd>
+            <dt>min-max</dt>
+            <dd>Mínimo y máximo de un campo numérico.</dd>
+            <dt>minlenght-maxlenght</dt>
+            <dd>Mínimo y máximo de carácteres de un campo de texto.</dd>
+            <dt>selected</dt>
+            <dd>Equivale a checked.</dd>
+            <dt>autofocus</dt>
+            <dd>Simula que el usuario hizo click en un campo.</dd>
+        </dl>
+    </article>
+</section>
+    <section> <h1 class="seccion">Sección 8</h1>
+    <article> <h2 id="contenido-embebido">Contenido embebido</h2>
+        <p>Es el contenido que treamos desde afuera. (imágenes, audios, videos,etc)</p>
+    </article>
+    <article> <h3>Imágenes</h3>
+        <dl class="dl">
+            <dt>Imágenes vectoriales</dt>
+            <dd>.svg, no pierden su calidad, recomendable siempre se pueda.</dd>
+            <dt>Mapa de bits</dt>
+            <dd>
+                <ul>
+                    <li>.jpg</li>
+                    <li>.png (8 y 24) si se necesitan transparencias.</li>
+                    <li>webp (formato que menos pesa)</li>
+                </ul>
+            </dd>
+        </dl>
+        <p>Para insertar una imágen en el codigo necesitamos la etiqueta &lt;img&gt; con sus atributos src (ruta donde se encuentra la imágen) y alt. (descripción breve por si la imágen falla al cargar)</p>
+    </article>
+    <article> <h4>Device Pixel Ratio</h4>
+        <p>Relación que existe entre los pixeles del dispositivo y los pixeles disponibles para "pintar" contenido. El dpr en pc es de 1, mientras que en celular puede ser entre 2 y 3. Es recomendable no usar la misma imágen en ambos dispositivos ya que el celular no necesita imágenes grandes.
+        </p>
+    </article>
+    <article> <h4>Atributo srcset</h4>
+        <p>Se usa para decilde al navegador qué imágen cargar dependiendo el dpr, para ésto debemos darle un set de rutas separadas por una , (coma). Podemos condicionar al navegador de cargar una imágen dependiendo el dpr, para ésto ponemos al final del enlace 2x o 3x o el valor que querramos ponerle.</p>
+        <p>Podemos agregar src abajo con un jpg como respaldo. (como para internet explorer que no admite ni srcset ni formato webp)</p>
+    </article>
+    <article> <h4>Etiqueta &lt;picture&gt;</h4>
+        <p>Funciona igual que srcset pero podémos elegir mas opciones.</p>
+        <p>Desntro de &lt;picture&gt; ponemos &lt;source srcset&gt; con el set de rutas, pero si o si es obligatorio un respaldo con &lt;img src&gt;jpg.</p>
+        <p>dentro de la etiquieta &lt;source&gt; podemos poner el atributo media con el valor min-width (valor en pixel), esto hará que dependiendo el zoom que le hagamos a la página la imágen cambiará de tamaño.</p>
+    </article>
+    <article> <h3>Etiqueta &lt;audio&gt;</h3>
+        <p>Cuenta tmabién con el atributo src y funciona de la misma manera. Éstos son algundos de sus atributos:</p>
+        <dl class="dl">
+            <dt>controls</dt>
+            <dd>Muestra el reproductor.</dd>
+            <dt>autoplay</dt>
+            <dd>Para que el audio comience al cargar la página. (los navegadores actuales bloquean este atributo si no esta silenciado)</dd>
+            <dt>muted</dt>
+            <dd>Mutea el audio.</dd>
+        </dl>
+    </article>
+    <article> <h3>Etiqueta &lt;video&gt;</h3>
+        <p>También cuenta con src y funciona de la misma manera.</p>
+        <p>También usa controls, autoplay y muted.</p>
+        <dl class="dl">
+            <dt>loop</dt>
+            <dd>Para que empiece de nuevo cuando termine. (bucle, esta etiqueta tmb sirve para el audio)</dd>
+            <dt>poster</dt>
+            <dd>Imágen inicial. (miniatura de youtube)</dd>
+        </dl>
+    </article>
+    <article> <h3>Etiqueta &lt;iframe&gt;</h3>
+        <p>Sirve para insertar una página web en nuestra página web.</p>
+        <p>Podemos copiar el código iframe de un video de youtube para que aparezca en nuestra página.</p>
+        <div class="iframe"><iframe width="560" height="315" src="https://www.youtube.com/embed/WTGeDwSR6lA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </article>
+    <article> <h3>Etiqueta &lt;figure&gt;</h3>
+        <p>Sirve para añadir contenido adicinal, como por ejemplo un título a una imágen, video, o lo que sea con la etquieta &lt;figcaption&gt;.</p>
+    </article>
+    <article> <h3>Etiquetas &lt;meta&gt;</h3>
+        <ul>
+            <li>meta name = "description" content = "acá va la descripción que aparece en el buscador de nuestra página"</li>
+            <li>meta name = "author" content = "acá va el nombre del autor de la página"</li>
+        </ul>
+        <img class="imagen" src="/assets/images/meta-description.png" alt="Captura de pantalla meta description">
+    </article>
+    <article> <h3>Favicon</h3>
+        <p>Es el icono que aparece en una pestaña al lado del nombre de nuestra página web.</p>
+        <img class="imagen" src="/assets/images/favicon-ej.png" alt="Captura de pantalla favicon">
+        <p>Generamos nuestro favicon en <a href="https://www.favicon-generator.org/">www.favicon-generator.org</a>, luego ponemos todos los favicons en assets y copiamos el código que nos da la página dentro de la etiqueta &lt;head&gt;.</p>
+    </article>
+    <article> <h3>Fontawesome</h3>
+        <p>CDN es un servidor que tiene una copia de lo que estamos solicitando; en éste caso usaremos la página <a href="https://fontawesome.com/">www.fontawesome.com</a></p>
+        <p>Para usar una librería de iconos, ponemos nuestros datos (el profesor puso fa-rocket en "got a favorite font awesome icon") copiamos el código que nos da la página en &lt;head&gt;, elegimos el icono y y copiamos el codigo donde lo querramos poner. <i class="fas fa-air-freshener"></i> </p>
+    </article>
+    <article> <h3 id="accesibilidad">Atributos de accesibilidad</h3>
+        <dl class="dl">
+            <dt>tabindex="orden 1,2,3,etc"</dt>
+            <dd>Se pone en las zonas donde querramos navegar mediante el tabulador,también sirve para seleccionar párrafos para que lo lea un navegador por voz.</dd>
+            <dt>aria-label</dt>
+            <dd>Sirve para que el navegador pueda leer más detallado cuando una persona invidente pone el mouse por encima del enlace "leer más"</dd>
+            <dt>role</dt>
+            <dd>para indicarle al navegador por voz sobre qué elemento nos estamos posicionando.</dd>
+        </dl>
+    </article>
+    <article> <h3>Open Graph Protocol</h3>
+        <p>Es un protocolo que sirve para elegir qué mostrar cuando compartimos nuestra página.</p>
+        <p>Creado por Facebook, no es exclusivo.</p>
+        <h3>Twitter Card</h3>
+        <p>Creado por y para Twitter.</p>
+    </article>
+</section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
