@@ -14,7 +14,7 @@ body a{
 
 .header{
     background-color: rgb(0, 0, 0);
-    padding: 5% 33% 5% 0;
+    padding: 2% 33% 2% 0;
     text-align: left; 
     position: fixed;
     top: 0;
@@ -45,7 +45,7 @@ font-size: 75%;
 
 .menu-index{
     background-color: rgb(0, 0, 0);
-    padding: 5% 0 5% 0;
+    padding: 2% 0 2% 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -104,7 +104,7 @@ iframe{
 
 .footer{
     background-color: rgb(0, 0, 0);
-    padding: 5% 0 5% 0;
+    padding: 2% 0 2% 0;
     width: 100%;
 }
 
