@@ -14,11 +14,12 @@ body a{
 
 .header{
     background-color: rgb(0, 0, 0);
-    padding: 2% 33% 2% 0;
+    padding: 15px 33% 15px 0;
     text-align: left; 
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 .header a{
@@ -45,7 +46,7 @@ font-size: 75%;
 
 .menu-index{
     background-color: rgb(0, 0, 0);
-    padding: 2% 0 2% 0;
+    padding: 15px 0 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -75,9 +76,9 @@ section{
 }
 
 section h1{
-    /* box-sizing: 2%; */
     position: sticky;
-    top: 0;
+    top: 10.5%;
+    background-color: #222;
 }
 h1,
 h2{
@@ -109,7 +110,7 @@ iframe{
 
 .footer{
     background-color: rgb(0, 0, 0);
-    padding: 2% 0 2% 0;
+    padding: 15px 0 15px 0;
     width: 100%;
 }
 
