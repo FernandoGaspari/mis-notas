@@ -74,6 +74,11 @@ section{
     width: auto;
 }
 
+section h1{
+    /* box-sizing: 2%; */
+    position: sticky;
+    top: 0;
+}
 h1,
 h2{
     text-align: center;
