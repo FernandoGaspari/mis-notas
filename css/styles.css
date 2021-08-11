@@ -46,6 +46,9 @@ font-size: 75%;
 .menu-index{
     background-color: rgb(0, 0, 0);
     padding: 5% 0 5% 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .menu-index a{
@@ -97,4 +100,21 @@ iframe{
 .imagen{
     width: 75%;
     box-shadow: 5px 5px 10px rgb(0 0 0 / 50);
+}
+
+.footer{
+    background-color: rgb(0, 0, 0);
+    padding: 5% 0 5% 0;
+    width: 100%;
+}
+
+.boton-arriba{
+    margin: 0 2% 12% auto;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.boton-arriba a{
+    color: black;
 }
