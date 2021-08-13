@@ -52,7 +52,7 @@
               <a href="#medidas-fuentes">Medidas y fuentes.</a>
             </li>
             <li class="lista">
-              <a href="#contenido-embebido">Contenido embebido.</a>
+              <a href="#colores">Colores.</a>
             </li>
             <li class="lista">
               <a href="#accesibilidad">Atributos de accesibilidad.</a>
@@ -563,9 +563,9 @@
           </ol>
         </article>
       </section>
-      <section>
+      <section id="medidas-fuentes">
         <h1 class="seccion">Sección 6</h1>
-        <article><h2 id="medidas-fuentes">Medidas y fuentes</h2></article>
+        <article><h2>Medidas y fuentes</h2></article>
         <article>
           <h3>Medidad absolutas y relativas</h3>
           <ul>
@@ -629,12 +629,41 @@
                 Height es una propiedad que tenemos que usar con mucho cuidado, si no es necesario establecer un alto, es mejor dejar que el contenido sea el que decida el alto del elemento.
             </p>
         </article>
-
+        <article>
+            <h3>Min/Max Widht y Height</h3>
+            <p>
+                Cuando establecemos un width y/o un height con una medida que es relativa, es posible que no queramos que se respete esa medida en todos los cosas. Para ello tenemos éstas propiedades:
+            </p>
+            <ul>
+                <li>min-width= Indica el ancho mínimo que puede alcanzar el elemento.</li>
+                <li>max-width= Indica el ancho máximo que puede alcanzar el elemento.</li>
+                <li>min-height= Indica el alto mínimo que puede alcanzar el elemento.</li>
+                <li>max-height= Indica el alto máximo que puede alcanzar el elemento.</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Unidades de viewport</h3>
+            <p>
+                El viewport es el área visible donde se mostrará la página web. Importante, es el área visible sin hacer scroll.
+            </p>
+            <p>
+                Podemos usar el viewport como medida de varias formas:
+            </p>
+            <ul>
+                <li>Viewport Width (vw)= Hace referencia al ancho del viewport.</li>
+                <li>Viewport Height (vh)= Hace referencia al alto del viewport.</li>
+                <li>Viewport Máx (vmax)= Utiliza el valor más grande entre el ancho y el alto del viewport.</li>
+                <li>Viewport Min (vmin)= Utiliza el valor más pequeño entre el ancho y el alto del viewport.</li>
+            </ul>
+            <p>
+                1vw = 1% del ancho del viewport, 5vh = 5% del alto del viewport...
+            </p>
+        </article>
       </section>
-      <section>
+      <section id="colores">
         <h1 class="seccion">Sección 7</h1>
         <article>
-          <h2 id="formularios">Formularios</h2>
+          <h2>Colores</h2>
           <h3>Etiquetas de formularios</h3>
           <dl class="dl">
             <dt>&lt;form&gt;</dt>

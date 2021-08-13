@@ -100,11 +100,15 @@ h3 {
 }
 
 iframe {
-  width: 100%;
+    display: block;
+  width: 75vmin;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .imagen {
-  width: 75%;
+  width: 75vw;
+  max-width: 50%;
   box-shadow: 5px 5px 10px rgb(0 0 0 / 50);
 }
 
