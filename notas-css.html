@@ -610,11 +610,26 @@
           </p>
         </article>
         <article>
+            <h3>Width en % y Width auto</h3>
+            <ul>
+                <li>Width en %= Usa de referencia el tamaño del contenedor y el navegador calcula ese porcentaje. Esto no ocurre cuando usamos transform.</li>
+                <li>Auto= Le pedimos al navegador que calcule en función del espacio disponible.</li>
+            </ul>
+            <p>
+                Si a un elemento le damos width auto, abarcará todo el ancho del contenedor y no se desbordará en caso de tener algún margin.
+            </p>
+        </article>
+        <article>
             <h3>Height en % y Height auto</h3>
             <ul>
-                <li>Height en %= </li>
+                <li>Height en %= Cuando estamos dentro de un contenedor, éste tiene que tener un alto declarado, si no no podrá calcular el porcentaje. Si se le aplica una medida con % se sustituirá automaticamente por auto.</li>
+                <li>Auto= El alto lo calculará el navegador en base al contenido del elemento.</li>
             </ul>
+            <p>
+                Height es una propiedad que tenemos que usar con mucho cuidado, si no es necesario establecer un alto, es mejor dejar que el contenido sea el que decida el alto del elemento.
+            </p>
         </article>
+
       </section>
       <section>
         <h1 class="seccion">Sección 7</h1>
