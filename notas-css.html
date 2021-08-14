@@ -16,6 +16,12 @@
       type="image/x-icon"
     />
     <link rel="icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/styles.css" />
@@ -55,7 +61,7 @@
               <a href="#colores">Colores.</a>
             </li>
             <li class="lista">
-              <a href="#accesibilidad">Atributos de accesibilidad.</a>
+              <a href="#tipografia">Tipografía.</a>
             </li>
           </ol>
         </nav>
@@ -565,7 +571,7 @@
       </section>
       <section id="medidas-fuentes">
         <h1 class="seccion">Sección 6</h1>
-        <article><h2>Medidas y fuentes</h2></article>
+        <article></article><h2>Medidas y fuentes</h2></article>
         <article>
           <h3>Medidad absolutas y relativas</h3>
           <ul>
@@ -662,316 +668,148 @@
       </section>
       <section id="colores">
         <h1 class="seccion">Sección 7</h1>
-        <article>
           <h2>Colores</h2>
-          <h3>Etiquetas de formularios</h3>
-          <dl class="dl">
-            <dt>&lt;form&gt;</dt>
-            <dd>Engloba nuestro formulario.</dd>
-            <dt>&lt;label&gt;</dt>
-            <dd>Donde escribimos el nombre del campo a rellenar.</dd>
-            <dt>&lt;input&gt;</dt>
-            <dd>Crea un campo para que el usuario interactúe.</dd>
-            <dt>&lt;button&gt;</dt>
-            <dd>Crea un botón que envía el formulario.</dd>
-          </dl>
           <p>
-            Con el atributo for de &lt;label&gt; podemos asociarlo con su
-            respectivo &lt;input&gt;, solo tenemos que ponerle un id a
-            &lt;input&gt; y ese id en for de &lt;label&gt;.
+            La mayoría de las pantallas funcionan con un modo de color aditivo (la suma de todos los colores da como resultado un blanco). Tenemos varias formas de dar color con CSS.
+          </p>
+        <article>
+          <h3>Current Color</h3>
+          <p>Es una palabra clave que se puede usar en lugar de cualquier valor de color y usará el valor ya sea establecido o heredado de la propiedad color.</p>
+        </article>
+        <article>
+          <h3>Colores RGB y RGBA</h3>
+          <p>
+            En el modo RGB tenemos 3 canales (Red, Green, Blue) y tenemos 8 bits de color por canal (cada bit tiene dos posibles valores 0 o 1), lo que significa que tenemos 2<sup>8</sup> posibles valores, que van desde 0 a 255; ésto nos da un total de 255 x 255 x 255 = 16581375 colores. Su
+            sintáxis es: rgb(R,G,B).
+          </p>
+          <p>
+            Si ponemos todos los canales a 0 tendremos un negro puro y si los ponemos a 255 tendremos un blanco.
+          </p>
+          <p>
+            Para movernos por la gama de grises debemos poner los 3 canales con el mismo valor, si ponemos los 3 canales a 128 tendremos el gris puro.
+          </p>
+          <p>
+            El modo RGB nos da la opción de utilizar un cuarto canal que correspondería al canal alpha, es decir, la transparencia, y su valor va desde 0 a 1 (0.5 transparencia del 50%, 0.1 transparencia del 10%...). Tenemos dos sintáxis par autilizar el canal alpha:
+            <ul>
+              <li>rgba(R,G,B,A)</li>
+              <li>rgb(R G B / A)</li>
+            </ul>
           </p>
         </article>
         <article>
-          <h4>Tipos de &lt;input&gt;</h4>
-          <dl class="dl">
-            <dt>button</dt>
-            <dd>
-              El nombre del botón se establece con el atributo value. En aspecto
-              es igual &lt;button&gt; pero no sirve para enviar formularios.
-              (mayormente se usa en JavaScript)
-              <input type="button" value="boton" />
-            </dd>
-            <dt>submit</dt>
-            <dd>
-              Para enviar formularios. (el nombre se establece igual que en
-              button) <input type="submit" value="submit" />
-            </dd>
-            <dt>date</dt>
-            <dd>
-              Campo para ingresar día, mes y año.<input
-                type="date"
-                name="fecha"
-                id="date"
-              />
-            </dd>
-            <dt>time</dt>
-            <dd>
-              Campo para ingresar hora.
-              <input type="time" name="hora" id="hour" />
-            </dd>
-            <dt>mounth</dt>
-            <dd>
-              Campo para ingresar mes.
-              <input type="mounth" name="mes" id="mounth-1" />
-            </dd>
-            <dt>week</dt>
-            <dd>
-              Campo para ingresar semana.
-              <input type="week" name="semana" id="week" />
-            </dd>
-            <dt>search</dt>
-            <dd>
-              Barra de búsqueda.
-              <input type="search" name="busqueda" id="search" />
-            </dd>
-            <dt>tel</dt>
-            <dd>
-              Campo para ingresar teléfono.
-              <input type="tel" name="telefono" id="tel" />
-            </dd>
-            <dt>email</dt>
-            <dd>
-              Campo para ingresar email.
-              <input type="email" name="correo" id="mail" />
-            </dd>
-            <dt>password</dt>
-            <dd>
-              Campo para ingresar contraseñas.
-              <input type="password" name="contraseña" id="password" />
-            </dd>
-            <dt>url</dt>
-            <dd>
-              Campo para ingresar urls,
-              <input type="url" name="pagina" id="urls" />
-            </dd>
-            <dt>color</dt>
-            <dd>
-              Para especificar un color.
-              <input type="color" name="colores" id="color" />
-            </dd>
-            <dt>number</dt>
-            <dd>
-              Solo se pueden ingresar números.
-              <input type="number" name="numeros" id="numbers" />
-            </dd>
-            <dt>range</dt>
-            <dd>
-              <ul>
-                <li>step: Define de cuánto en cuánto se mueve.</li>
-                <li>min: Valor mínimo de la barra.</li>
-                <li>max: Valor máximo de la barra.</li>
-              </ul>
-              <input
-                type="range"
-                step="10"
-                min="0"
-                max="100"
-                name="progreso"
-                id="progress"
-              />
-            </dd>
-            <dt>reset</dt>
-            <dd>
-              Resetea el formulario.
-              <input type="reset" name="reseteo" id="reset" />
-            </dd>
-          </dl>
+          <h3>Colores hexadecimales</h3>
+          <p>
+            La notación hexadecimal es la más común en desarrollo web, se basa en los mismos principios que el RGB pero escrito en notación hexadecimal.
+          </p>
+          <p>
+            Es sistema hexadecimal se basa en 16 valores del 0 al 15 y utiliza los dígitos del 0 al 9 y las letras de la A a la F. En éste tipo de notación también contamos con 256 valores. Se compone de 16 carácteres en parejas ya que 16 x 16 = 256.
+          </p>
+          <p>
+            Para indicar que vamos a usar notación hexadecimal, debemos usar el símbolo # y a continuación usaremos la notación por parejas.
+          </p>
+          <p>
+            Cuando una pareja usa el mismo valor se puede omitir el segundo valor, siempre que se haga en las 3 parejas=
+            <ul>
+              <li>#FFFFFF= #FFF</li>
+              <li>#8833CC= #83C</li>
+            </ul>
+          </p>
+          <p>
+            También tenemos la opción de usar transparencias en hexadecimal añadiendo un cuarto canal que sigue las mismas normas.
+            <ul>
+              <li>#99BB2277= #9B27</li>
+            </ul>
+          </p>
         </article>
         <article>
-          <h3>&lt;input&gt; tipo seleccionables</h3>
-          <dl class="dl">
-            <dt>radio</dt>
-            <dd>
-              Permite seleccionar una única opción de una lista.
-              <input type="radio" name="radio" id="radio" />
-            </dd>
-            <dt>checkbox</dt>
-            <dd>
-              Permite seleccionar varias opciones de una lista.
-              <input type="checkbox" name="checkbox" id="checkbox" />
-            </dd>
-          </dl>
+          <h3>Color HSL y HSLA</h3>
+          <p>
+            El modo de color HSL es el más instuitivo para los humanos. Su nombre viene de las siglas Hue (tono) Saturation (saturación) y Lightness (luminancia).
+          </p>
+          <p>
+            El primer valor es el ángulo en el círculo cromático donde 0 y 360 será el color rojo. Hay ciertos valores que nos puede servir como referencia para relacionar mejor los colores con sus ángulos:
+            <ul>
+              <li>0= Rojo</li>
+              <li>60= Amarillo</li>
+              <li>120= Verde</li>
+              <li>180= Cyan</li>
+              <li>240= Azul</li>
+              <li>300= Magenta</li>
+            </ul>
+          </p>
+          <p>
+            El segundo valor es la saturación o intensidad del color:
+            <ul>
+              <li>0%= Gris</li>
+              <li>100%= Color puro</li>
+            </ul>
+          </p>
+          <p>
+            El tercer valor es la luminocidad del color:
+            <ul>
+              <li>0%= Negro (nada de luz).</li>
+              <li>100%= Blanco (luz máxima).</li>
+            </ul>
+          </p>
+          <p>
+            Es importante que aunque el valor de saturación o luminancia sea 0 hay que poner el 0% si no, no funcionará.
+          </p>
+          <p>
+            El modo HSL también admite transparencia y su sintáxis es la misma que la del modo RGB. Tenemos dos sintáxis disponibles:
+            <ul>
+              <li>hsla(h,s,l,a)</li>
+              <li>hsl(h s l / a)</li>
+            </ul>
+            En ambos casos el valor alpha va de 0 a 1.
+          </p>S
+        </article>
+        <article>
+          <h3>Páginas útiles para combinar colores</h3>
           <ul>
-            <li>
-              Todos los &lt;input&gt; deben tener el mismo name para que solo se
-              pueda seleccionar una opción.
-            </li>
-            <li>
-              El atributo checked sirve para que aparezca marcada alguna opción
-              por defecto.
-            </li>
-            <li>
-              Es necesario agregar el atributo value a todos los &lt;input&gt;
-              con la información que queremos que nos llegue a nosotros.
-            </li>
+            <li><a href="https://brandcolors.net/">www.brandcolors.net</a></li>
+            <li><a href="https://htmlcolorcodes.com/">www.htmlcolorcodes.com</a></li>
+            <li><a href="https://color.adobe.com/">www.color.adobe.com</a></li>
           </ul>
         </article>
-        <article>
-          <h3>Elemento select básico</h3>
-          <p>
-            Crea una lista donde podemos seleccionar una o varias opciones. Su
-            sintáxis es:
-          </p>
-          <p>
-            &lt;select name="lenguajes" id=""><br />
-            &lt;option value="html">HTML&lt;/option> <br />
-            &lt;option value="css">CSS&lt;/option> &lt;/select>
-          </p>
-          <label for="lenguajes">Lenguaje</label>
-          <select name="lenguajes" id="lenguajes">
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="js">JavaScript</option>
-          </select>
-        </article>
-        <article>
-          <h3>Elemento select avanzado</h3>
-          <p>
-            Para ordenar por categorías si es que tenemos muchas opciones; se
-            usa la etiqueta &lt;optgroup&gt; con el atributo label para nombrar
-            la categoría.
-          </p>
-          <label for="animales">Animales</label>
-          <select name="animales" id="animales">
-            <optgroup label="Cuadrúpedos">
-              <option value="Cuadrúpedos">Perro</option>
-              <option value="Cuadrúpedos">Gato</option>
-            </optgroup>
-            <optgroup label="Aves">
-              <option value="Aves">Loro</option>
-              <option value="Aves">Canario</option>
-            </optgroup>
-            <optgroup label="Marinos">
-              <option value="Marinos">Peces</option>
-              <option value="Marinos">Caracoles</option>
-            </optgroup>
-          </select>
-        </article>
-        <article>
-          <h3>Datalist</h3>
-          <p>
-            Similar a select, incluye un filtro para facilitar la búsqueda, para
-            esto ponemos el atributo list en un &lt;input&gt; de tipo list.
-            &lt;datalist&gt; necesita un id y encierra todas las
-            &lt;option&gt;del formulario.
-          </p>
-          <label for="juegos">Juegos</label>
-          <input type="list" list="data-juegos" name="juegos" id="juegos" />
-          <datalist id="data-juegos">
-            <select name="juegos" id="games">
-              <optgroup label="Indie">
-                <option value="Indie">Ori</option>
-                <option value="Indie">Minecraft</option>
-              </optgroup>
-              <optgroup label="AAA">
-                <option value="AAA">Dragon Age</option>
-                <option value="AAA">Mass Effect</option>
-              </optgroup>
-              <optgroup label="MMORPG">
-                <option value="MMORPG">Wakfu</option>
-                <option value="MMORPG">Dofus</option>
-              </optgroup>
-            </select>
-          </datalist>
-        </article>
-        <article>
-          <h3>Más elementos para los formularios</h3>
-          <dl class="dl">
-            <dt>&lt;fieldset&gt;</dt>
-            <dd>Crea un recuadro que agrupa los elementos de un formulario.</dd>
-            <dt>&lt;legend&gt;</dt>
-            <dd>Le da un nombre al contenido de &lt;fieldset&gt;</dd>
-            <dt>&lt;input type="file"&gt;</dt>
-            <dd>
-              Se usa para cargar archivos para luego enviarlos. (se usa
-              JavaScript)
-            </dd>
-            <dt>&lt;meter&gt;</dt>
-            <dd>
-              Es como una barra de capacidad. Requiere atributos id, min, max,
-              value, low, high y optimus.
-            </dd>
-            <dt>&lt;progress&gt;</dt>
-            <dd>
-              Representa el progreso de una tarea, usa atributos id, max y
-              value.
-            </dd>
-            <dt>&lt;textarea&gt;</dt>
-            <dd>
-              Se utiliza para introducir texto en un formulario, usa atributos
-              name, id, cols y rows; estos dos últimos cambian el tamaño de la
-              caja. (es una caja de comentarios)
-            </dd>
-          </dl>
-        </article>
-        <article>
-          <h3>Atributos para formularios</h3>
-          <dl class="dl">
-            <dt>placeholder</dt>
-            <dd>
-              Da una pista de lo que el usuario tiene que poner en la zona de
-              input. ej: <input type="text" placeholder="Introzca nombre" />
-            </dd>
-            <dt>required</dt>
-            <dd>
-              Hace que un campo sea obligatorio. (se puede desactivar desde la
-              consola, se necesitará más seguridad)
-            </dd>
-            <dt>readonly</dt>
-            <dd>
-              Convierte el campo en solo lectura. ej:
-              <input type="text" readonly />
-            </dd>
-            <dt>disabled</dt>
-            <dd>Desactiva el campo.</dd>
-            <dt>min-max</dt>
-            <dd>Mínimo y máximo de un campo numérico.</dd>
-            <dt>minlenght-maxlenght</dt>
-            <dd>Mínimo y máximo de carácteres de un campo de texto.</dd>
-            <dt>selected</dt>
-            <dd>Equivale a checked.</dd>
-            <dt>autofocus</dt>
-            <dd>Simula que el usuario hizo click en un campo.</dd>
-          </dl>
-        </article>
       </section>
-      <section>
+      <section id="tipografia">
         <h1 class="seccion">Sección 8</h1>
         <article>
-          <h2 id="contenido-embebido">Contenido embebido</h2>
+          <h2>Tipografía</h2>
           <p>
-            Es el contenido que treamos desde afuera. (imágenes, audios,
-            videos,etc)
+            La tipografía es la ciencia que estudia el diseño y uso de los tipos de letra.
+          </p>
+          <p>
+            <ul>
+              <li>Las fuentes son tipos específicos de letra.</li>
+              <li>Los glifos son cada uno de los dibujos que representan cada símbolo de la fuente, incluidos los espacios.</li>
+              <li>Los estilos de fuente son las modificaciones que se hacen a las fuentes, como el grosor o la inclinación.</li>
+              <li>Familia tipográfica son las diferentes fuentes que pertenecen a una misma fuente base.</li>
+              <li>Cuando usamos una propiedad text-* estamos afectando al bloque commpleto.</li>
+              <li>Cuando usamos una propiedad font-* estamos afectando a la fuente del texto.</li>
+            </ul>
           </p>
         </article>
         <article>
-          <h3>Imágenes</h3>
-          <dl class="dl">
-            <dt>Imágenes vectoriales</dt>
-            <dd>.svg, no pierden su calidad, recomendable siempre se pueda.</dd>
-            <dt>Mapa de bits</dt>
-            <dd>
-              <ul>
-                <li>.jpg</li>
-                <li>.png (8 y 24) si se necesitan transparencias.</li>
-                <li>webp (formato que menos pesa)</li>
-              </ul>
-            </dd>
-          </dl>
+          <h3>Fuentes predeterminadas</h3>
           <p>
-            Para insertar una imágen en el codigo necesitamos la etiqueta
-            &lt;img&gt; con sus atributos src (ruta donde se encuentra la
-            imágen) y alt. (descripción breve por si la imágen falla al cargar)
-          </p>
+            Las fuentes predeterminadas son las fuentes que se consideran seguras ya que son genéricas y no establecen una familia tipográfica, sino un estilo de fuente. Algunas de éstas son:
+          <ul>
+            <li>serif= Fuentes que tienen serifas (adornos en los carácteres).</li>
+            <li>sans-serif= Fuentes sin serifas.</li>
+            <li>monospace= Fuentes que tienen el mismo espacio entre todos sus carácteres.</li>
+            <li>cursive= Fuentes que pretenden emular escritura a mano, con ligaduras y trazos fluídos.</li>
+            <li>fantasy= Fuentes que suelen ser decorativas.</li>
+          </ul>
+         </p>
         </article>
         <article>
-          <h4>Device Pixel Ratio</h4>
+          <h3>Google fonts</h3>
           <p>
-            Relación que existe entre los pixeles del dispositivo y los pixeles
-            disponibles para "pintar" contenido. El dpr en pc es de 1, mientras
-            que en celular puede ser entre 2 y 3. Es recomendable no usar la
-            misma imágen en ambos dispositivos ya que el celular no necesita
-            imágenes grandes.
+            Fuentes desde un servidor remoto son aquellas que se encuentran en un servidor y que nosotros descargamos para su uso (desde la página <a href="https://fonts.google.com/">www.fonts.google.com</a>), la más famosa es Google Fonts.
+          </p>
+          <p>
+            Siempre que utilicemos fuenten no genéricas, debemos poner fuentes genéricas de respaldo.
           </p>
         </article>
         <article>
