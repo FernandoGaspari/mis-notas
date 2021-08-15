@@ -48,18 +48,19 @@ body a {
   
 }
 
-.menu-index {
-  background-color: rgb(0, 0, 0);
-  padding: 15px 0 15px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
 .menu-index a {
   color: whitesmoke;
-  margin: 15px;
-  font-size: 75%;
+  display: block;
+  margin: 25px auto;
+  padding: 50px;
+  font-size: 200%;
+  width: 100vmin;
+  font-family: 'Palette Mosaic', cursive;
+  text-align: center;
+}
+
+.body-index{
+  margin-top: 75px;
 }
 
 .seccion {
@@ -78,7 +79,6 @@ section {
   padding: 5%;
   width: auto;
   font-family: 'Montserrat', sans-serif;
-  /* color: #6F7D8F; */
   color:#FCB953;
 }
 
