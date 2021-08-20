@@ -4,7 +4,7 @@
 
 body {
   margin-top: 15%;
-  background-color: #6959c4;
+  background-color: #79787a;
 }
 
 body a {
@@ -29,7 +29,7 @@ body a {
 }
 
 .indice {
-  background-color: rgb(106, 129, 231);
+  background-color: rgb(157, 160, 175);
   width: max-content;
   display: block;
   margin-left: auto;
@@ -49,7 +49,9 @@ body a {
 }
 
 .menu-index a {
-  color: whitesmoke;
+  font-family: 'Palette Mosaic', cursive;
+  color: #000d7e;
+  text-shadow: 5px 0px rgb(206, 7, 206), 10px 10px rgb(10, 1, 48);
   display: block;
   margin: 25px auto;
   padding: 50px;
@@ -70,7 +72,7 @@ body a {
 }
 
 section {
-  background-color: rgb(106, 129, 231);
+  background-color: rgb(157, 160, 175);
   border: solid rgb(82, 0, 75);
   outline: 1px solid rgb(82, 0, 75);
   outline-offset: -5px;
@@ -85,7 +87,7 @@ section {
 section h1 {
   position: sticky;
   top: 48px;
-  background-color: rgb(106, 129, 231);
+  background-color: rgb(157, 160, 175);
   text-shadow: 1px 1px rgb(58, 6, 55);
 }
 h1,
